@@ -1,7 +1,21 @@
-import { Main } from "./containers/Main";
+// import { Main } from "./containers/Main"; //if needed input the "<Main />" jsx element on line 7
+import React, { useState } from "react";
+import { Login } from "./containers/Login";
+import { Register } from "./containers/Register";
+import './App.css';
+
 function App() {
+  const [currentForm, setCurrentForm] = useState('login');
+
+  const toggleForm = (formName) => {
+    setCurrentForm(formName);
+  }
   return (
-    <Main/>
+    <div className="App">
+    {
+      currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
+    }
+    </div>
   );
 }
 
