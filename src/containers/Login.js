@@ -65,6 +65,17 @@ export const Login = (Props) => {
                 </Button>
 
             </Box>
+
+                <Link href="#" color="inherit"
+                    component="button"
+                    variant="body2"
+                    onClick={() => {console.info("Create an Account");
+                    }}
+                >
+                    Create an Account                    
+                </Link>
+
         </Container>
     )
 }
+
